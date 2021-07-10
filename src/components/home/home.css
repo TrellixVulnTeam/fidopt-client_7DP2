@@ -1,0 +1,7 @@
+.home-container {
+    background: red;
+    width: 50vw;
+}
+.home-container h1 {
+    color: white;
+}
