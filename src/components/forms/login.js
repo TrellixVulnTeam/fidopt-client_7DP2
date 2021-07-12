@@ -9,6 +9,7 @@ const Login = (props) => {
     password: "",
   });
   console.log(props.rol)
+  console.log(props.auth)
   let history = useHistory();
 
   const postLogin = async () => {
@@ -37,7 +38,6 @@ const Login = (props) => {
     if(props.rol == "true"){
     history.push("/homeVeterinario");
   } else if(props.rol == "false") {
-    console.log("hola")
     history.push("/homeUsuario")
   }
   };

@@ -23,9 +23,9 @@ const HomeUsuario = () => {
         return result;
       });
     if (responseFromGet.user !== undefined) {
-      let rol = responseFromGet.rol;
-      let username = responseFromGet.nombre;
-      let favoriteDogs = responseFromGet.perrosFavoritos;
+      let rol = responseFromGet.user.rol;
+      let username = responseFromGet.user.nombre;
+      let favoriteDogs = responseFromGet.user.perrosFavoritos;
       let userInfo = {
         auth: responseFromGet.auth,
         message: responseFromGet.message,
@@ -66,26 +66,38 @@ const HomeUsuario = () => {
   }, []);
   console.log(info);
   if (info.auth === null) {
-    return <div>Cargando...</div>;
+    return (<div>Cargando...</div>);
   } else if (info.auth === false) {
-    return <h1>{info.message}</h1>;
+    return (<h1>{info.message}</h1>);
   } else if (info.auth === true) {
     return (
       <div>
         {console.log(info)};<p>Welcome {info.nombre}</p>
         <h5>Tus perros favoritos son:</h5>
-        <table className="table table-striped table-dark">
-          <tbody>
-            {info.perrosFavoritos.map((perro) => {
-              return (
-                <tr key={`perro-container-${perro.id}`}>
-                  <td key={`perro-name-${perro.id}`}>{perro.nombre}</td>
-                  <td key={`perro-raza-${perro.id}`}>{perro.raza}</td>
-                </tr>
-              );
-            })}
-          </tbody>
-        </table>
+        <div className="item-list clearfix align-middle">
+          <div className="row">
+            <div className="col-md-4 col-sm-6">
+              {info.perrosFavoritos.map((perro)=>(             
+            <div className="item-card" key={`perro-container-${perro._id}`}>
+              <img
+                src="https://via.placeholder.com/400x100/6495ED"
+                alt="profile-cover"
+                className="img-responsive-cover"
+              ></img>
+              <div className="card-info">
+              <img src="https://bootdey.com/img/Content/avatar/avatar5.png" alt="user" className="profile-photo-lg"></img>
+              <div className="item-info"> 
+              <a href="" className="pull-right text-green"></a>
+                  	<h5 key={`perro-name-${perro._id}`}><a href="#" className="profile-link">{perro.nombre}</a></h5>
+                  	<p key={`perro-raza-${perro._id}`}>{perro.raza}</p>
+              </div>
+              </div>
+            </div>
+              ))}
+
+            </div>
+          </div>
+        </div>
       </div>
     );
   }
