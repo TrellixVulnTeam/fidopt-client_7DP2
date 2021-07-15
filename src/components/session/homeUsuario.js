@@ -34,14 +34,6 @@ const HomeUsuario = () => {
         rol: rol,
       };
       setInformation(userInfo);
-      // let perros = favoriteDogs.map((perro) => {
-      //   let dogObject = {
-      //     id: perro._id,
-      //     nombre: perro.nombre,
-      //     raza: perro.raza,
-      //   };
-      //   return dogObject;
-      // });
     } else {
       let userInfo = {
         auth: responseFromGet.auth,
@@ -72,7 +64,7 @@ const HomeUsuario = () => {
   } else if (info.auth === true) {
     return (
       <div>
-        {console.log(info)};<p>Welcome {info.nombre}</p>
+        <p>Welcome {info.nombre}</p>
         <h5>Tus perros favoritos son:</h5>
         <div className="item-list clearfix align-middle">
           <div className="row">

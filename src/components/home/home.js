@@ -8,8 +8,8 @@ const Home = () => {
       <h1>Home</h1>
       <div className="button-container d-flex justify-content-evenly">
       <Link className="btn btn-secondary"to="/signup">Sign Up</Link>
-      <Link className="btn btn-secondary"to="/loginVet" >Log in como Veterinario</Link>
-      <Link className="btn btn-secondary"to="/loginUsuario" >Log in como Usuario</Link>
+      <Link className="btn btn-secondary"to="/loginVet" >Soy Veterinario</Link>
+      <Link className="btn btn-secondary"to="/loginUsuario" >No soy veterinario</Link>
       </div>
     </div>
   )

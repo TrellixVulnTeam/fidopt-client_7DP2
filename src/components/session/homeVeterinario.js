@@ -65,7 +65,6 @@ const HomeVeterinario = () => {
   } else if (info.auth === true) {
     return (
       <div className="container-fluid">
-        {console.log(info)}
         <p>Welcome {info.nombre}</p>
         <h5>Tus perros son:</h5>
         <div className="item-list clearfix align-middle">
@@ -79,7 +78,7 @@ const HomeVeterinario = () => {
                 className="img-responsive-cover"
               ></img>
               <div className="card-info">
-              <img src="https://bootdey.com/img/Content/avatar/avatar5.png" alt="user" className="profile-photo-lg"></img>
+              <img src={`https://source.unsplash.com/80x80?${perro.raza}`} alt="user" className="profile-photo-lg"></img>
               <div className="item-info"> 
               <a href="" className="pull-right text-green"></a>
                   	<h5 key={`perro-name-${perro._id}`}><a href="#" className="profile-link">{perro.nombre}</a></h5>
