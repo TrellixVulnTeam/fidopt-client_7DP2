@@ -35,9 +35,9 @@ const Login = (props) => {
   }
   const redirect = () => {
     console.log(props.rol)
-    if(props.rol == "true"){
+    if(props.rol === "true"){
     history.push("/homeVeterinario");
-  } else if(props.rol == "false") {
+  } else if(props.rol === "false") {
     history.push("/homeUsuario")
   }
   };
