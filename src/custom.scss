@@ -3,7 +3,7 @@
   margin-left: auto;
   margin-right: auto;
 }
-.all-dog-container {
+.all-dog-container, .all-user-container {
   margin-left: auto;
   margin-right: auto;
 }
@@ -39,4 +39,4 @@ img.profile-photo-lg {
 .text-green {
   color: #8dc63f;
 }
-@import "~bootstrap/scss/bootstrap.scss";
+
