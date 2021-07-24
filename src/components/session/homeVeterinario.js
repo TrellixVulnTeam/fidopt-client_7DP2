@@ -69,9 +69,9 @@ const HomeVeterinario = () => {
       <div>
         <AppHeader />
         <div className="w-full bg-gray-200 dark:bg-gray-900">
-          <div className="container mx-auto px-2 flex ">
+          <div className="px-20">
             <div className="w-full">
-              <h2 className="text-gray-800 text-center dark:text-gray-100 text-xl tracking-normal font-medium mb-1">
+              <h2 className="text-gray-800 text-center dark:text-gray-100 text-xl font-medium mb-1">
                 Welcome, {info.nombre} !
               </h2>
               <h5>Tus perros son:</h5>

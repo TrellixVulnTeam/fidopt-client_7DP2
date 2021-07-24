@@ -76,6 +76,14 @@ const App = () => {
             return <Usuarios></Usuarios>;
           }}
         />
+        <Route
+          exact
+          path="/logout"
+          render={() => {
+            window.localStorage.clear()
+            return <Home></Home>;
+          }}
+        />
       </Switch>
     </div>
   );

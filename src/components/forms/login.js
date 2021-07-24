@@ -111,7 +111,7 @@ const Login = (props) => {
                   Submit
                 </button>
 
-            <Link type="submit" className="text-center focus:outline-none w-full sm:w-auto bg-indigo-700 transition duration-150 ease-in-out hover:bg-indigo-600 rounded text-white px-8 py-3 text-sm mt-6" to="/">
+            <Link className="text-center focus:outline-none w-full sm:w-auto bg-indigo-700 transition duration-150 ease-in-out hover:bg-indigo-600 rounded text-white px-8 py-3 text-sm mt-6" to="/">
               Go Back
             </Link>
             </div>

@@ -7,7 +7,7 @@ const Header = () => {
       >
         FIDOPT
       </h1>
-      <div className="px-2 flex flex-col items-center justify-center pt-12 lg:pt-0">
+      <div className="px-2 flex flex-col items-center justify-center pt-5 lg:pt-0">
         <img
           className="w-32 h-32"
           id="logo"

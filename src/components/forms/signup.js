@@ -42,6 +42,7 @@ const SignUp = () => {
               Email address
             </label>
             <input
+            name="email"
               type="email"
               className="form-control"
               onChange={handleChange}
@@ -52,6 +53,7 @@ const SignUp = () => {
               Password
             </label>
             <input
+            name="password"
               type="password"
               className="form-control"
               id="exampleInputPassword1"
