@@ -1,4 +1,5 @@
 import React from "react";
+import Header from "../appComponents/header"
 const { useState, useEffect } = React;
 
 const HomeUsuario = () => {
@@ -64,12 +65,13 @@ const HomeUsuario = () => {
   } else if (info.auth === true) {
     return (
       <div>
+        <Header />
         <p>Welcome {info.nombre}</p>
         <h5>Tus perros favoritos son:</h5>
         <div className="item-list clearfix align-middle">
           <div className="row">
             <div className="col-md-4 col-sm-6">
-              {info.perrosFavoritos.map((perro)=>(             
+              {info.perrosFavoritos.map((perro)=>(
             <div className="item-card" key={`perro-container-${perro._id}`}>
               <img
                 src="https://via.placeholder.com/400x100/6495ED"

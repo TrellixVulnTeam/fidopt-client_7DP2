@@ -1,4 +1,6 @@
 import React from "react";
+import AppHeader from "../appComponents/appHeader";
+import DogListComponent from "../perros/dogList";
 const { useState, useEffect } = React;
 
 const HomeVeterinario = () => {
@@ -64,38 +66,22 @@ const HomeVeterinario = () => {
     return <h1>{info.message}</h1>;
   } else if (info.auth === true) {
     return (
-      <div className="container-fluid">
-        <p>Welcome {info.nombre}</p>
-        <h5>Tus perros son:</h5>
-        <div className="item-list clearfix align-middle">
-          <div className="row">
-            <div className="col-md-4 col-sm-6">
-              {info.perros.map((perro)=>(             
-            <div className="item-card" key={`perro-container-${perro._id}`}>
-              <img
-                src="https://via.placeholder.com/400x100/6495ED"
-                alt="profile-cover"
-                className="img-responsive-cover"
-              ></img>
-              <div className="card-info">
-              <img src={`https://source.unsplash.com/80x80?${perro.raza}`} alt="user" className="profile-photo-lg"></img>
-              <div className="item-info"> 
-              <a href="" className="pull-right text-green"></a>
-                  	<h5 key={`perro-name-${perro._id}`}><a href="#" className="profile-link">{perro.nombre}</a></h5>
-                  	<p key={`perro-raza-${perro._id}`}>{perro.raza}</p>
-              </div>
-              </div>
-            </div>
-              ))}
-
+      <div>
+        <AppHeader />
+        <div className="w-full bg-gray-200 dark:bg-gray-900">
+          <div className="container mx-auto px-2 flex ">
+            <div className="w-full">
+              <h2 className="text-gray-800 text-center dark:text-gray-100 text-xl tracking-normal font-medium mb-1">
+                Welcome, {info.nombre} !
+              </h2>
+              <h5>Tus perros son:</h5>
+              <DogListComponent dogs={info.perros} />
             </div>
           </div>
         </div>
-
       </div>
     );
   }
 };
 
 export default HomeVeterinario;
-

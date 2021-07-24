@@ -4,10 +4,13 @@ import Login from "./components/forms/login";
 import SignUp from "./components/forms/signup";
 import HomeUsuario from "./components/session/homeUsuario";
 import HomeVeterinario from "./components/session/homeVeterinario";
-import Perros from "./components/perros/perros"
+import Perros from "./components/perros/perros";
+import Veterinarios from "./components/veterinarios/veterinarios";
+import Usuarios from "./components/usuarios/usuarios"
 
 const App = () => {
   return (
+    
     <div>
       <Switch>
         <Route
@@ -56,10 +59,23 @@ const App = () => {
           exact
           path="/perros"
           render={() => {
-            return <Perros ></Perros>;
+            return <Perros></Perros>;
           }}
         />
-  
+        <Route
+          exact
+          path="/veterinarios"
+          render={() => {
+            return <Veterinarios></Veterinarios>;
+          }}
+        />
+        <Route
+          exact
+          path="/usuarios"
+          render={() => {
+            return <Usuarios></Usuarios>;
+          }}
+        />
       </Switch>
     </div>
   );

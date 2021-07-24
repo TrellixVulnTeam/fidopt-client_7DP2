@@ -1,7 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { useHistory, useEffect } from "react-router";
+import Header from "../appComponents/header"
 const useState = React.useState;
+
 
 const Login = (props) => {
   let [info, setInfo] = useState({
@@ -69,23 +71,15 @@ const Login = (props) => {
 
   return (
     <div>
-      <h1 style={{background: "linear-gradient(to bottom, #a8c0ff, #4338CA)"}} className="text-center h-32 text-white font-mono text-5xl pt-8">FIDOPT</h1>
+      <Header />
       <div className="mx-auto font-nunito font-bold flex justify-center h-full flex-col lg:flex-row">
         <form
           onSubmit={handleFormSubmit}
           className="w-full lg:w-1/2 flex justify-center bg-white dark:bg-gray-900"
         >
           <div className="w-full sm:w-4/6 md:w-3/6 lg:w-2/3 text-gray-800 dark:text-gray-100 mb-12 sm:mb-0 flex flex-col justify-center px-2 sm:px-0">
-            <div className="px-2 flex flex-col items-center justify-center pt-12 lg:pt-0">
-              <img
-                className="w-32 h-32"
-                id="logo"
-                alt=""
-                src="https://pupuphooray.com/wp-content/uploads/2019/03/dog-icon.png"
-              />
-            </div>
             <div className="mt-8 w-full px-2 sm:px-6">
-              <label className="text-lg font-semibold leading-tight">
+              <label className="text-lg font-semibold leading-tight" >
                 Email address
               </label>
               <input

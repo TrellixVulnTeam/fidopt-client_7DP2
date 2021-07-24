@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import Header from "../appComponents/header"
 const useState = React.useState;
 
 const SignUp = () => {
@@ -20,7 +21,7 @@ const SignUp = () => {
   };
   return (
     <div>
-        {console.log(info)}
+      <Header />
       <h1 className="text-center">Sign up for an account</h1>
       <div className="form">
         <form>

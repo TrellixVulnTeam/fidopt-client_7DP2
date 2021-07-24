@@ -1,4 +1,5 @@
 import React from "react";
+import AppHeader from "../appComponents/appHeader"
 import DogListComponent from "./dogList";
 const { useState, useEffect } = React;
 
@@ -30,6 +31,7 @@ const Perros = () => {
   } else if (info.cargando === false) {
     return (
       <div>
+        <AppHeader />
         <h1>Todos los perros</h1>
         <div className="all-dog-container col-md-4 col-sm-6">
           <DogListComponent dogs={info.perros} />
