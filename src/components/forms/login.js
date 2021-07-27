@@ -10,8 +10,6 @@ const Login = (props) => {
     email: "",
     password: "",
   });
-  console.log(props.rol);
-  console.log(props.auth);
   let history = useHistory();
 
   const postLogin = async () => {
@@ -36,7 +34,6 @@ const Login = (props) => {
     window.localStorage.setItem("token", obj.token);
   };
   const redirect = () => {
-    console.log(props.rol);
     if (props.rol === "true") {
       history.push("/homeVeterinario");
     } else if (props.rol === "false") {

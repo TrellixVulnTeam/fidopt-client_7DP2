@@ -7,7 +7,9 @@ import HomeVeterinario from "./components/session/homeVeterinario";
 import Perros from "./components/perros/perros";
 import Veterinarios from "./components/veterinarios/veterinarios";
 import Usuarios from "./components/usuarios/usuarios"
-
+import Perro from "./components/perros/perro"
+import AdoptionRequest from "./components/forms/adoptionRequest"
+import MeetingRequest from "./components/forms/meetingRequest"
 const App = () => {
   return (
     
@@ -82,6 +84,27 @@ const App = () => {
           render={() => {
             window.localStorage.clear()
             return <Home></Home>;
+          }}
+        />
+        <Route
+          exact
+          path="/perro/:id"
+          render={() => {
+            return <Perro></Perro>;
+          }}
+        />
+         <Route
+          exact
+          path="/newAdoptionRequest/:id"
+          render={() => {
+            return <AdoptionRequest></AdoptionRequest>;
+          }}
+        />
+         <Route
+          exact
+          path="/newMeetingRequest/:id"
+          render={() => {
+            return <MeetingRequest></MeetingRequest>;
           }}
         />
       </Switch>

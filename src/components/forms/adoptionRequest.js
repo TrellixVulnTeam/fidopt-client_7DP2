@@ -1,10 +1,12 @@
 import AppHeader from "../appComponents/appHeader";
 import React from "react";
-import { useHistory } from "react-router";
-const { useState, useEffect, useParams } = React;
+import { useHistory, useParams } from "react-router";
+const { useState, useEffect } = React;
 
 const AdoptionRequest = (props) => {
+  const params = useParams();
   let pending = "Pending";
+  let { id } = params.id;
   let [info, setInfo] = useState({
     adoptionReason: "",
     ciudad: "",
@@ -15,7 +17,7 @@ const AdoptionRequest = (props) => {
 
   const postAdoptionRequest = async () => {
     let response = await fetch(
-      "http://localhost:3000/newAdoptionRequest/:idPerro",
+      `http://localhost:3000/newAdoptionRequest/${id}`,
       {
         method: "POST",
         headers: {
@@ -35,6 +37,9 @@ const AdoptionRequest = (props) => {
       });
     return response;
   };
+  const redirect = () => {
+    history.push(`/perro/${id}`);
+  };
 
   const handleChange = (e) => {
     e.preventDefault();
@@ -44,6 +49,16 @@ const AdoptionRequest = (props) => {
       [e.target.name]: e.target.value,
     });
   };
+  const handleFormSubmit = async (e) => {
+    e.preventDefault();
+    let adoptionRequest = await postAdoptionRequest();
+    redirect();
+  };
+  return (
+    <div>
+      <AppHeader />
+    </div>
+  )
 };
 
 export default AdoptionRequest;
