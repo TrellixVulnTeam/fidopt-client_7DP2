@@ -1,5 +1,6 @@
 import React from "react";
 import Header from "../appComponents/header"
+import Loader from "../appComponents/Loader"
 const { useState, useEffect } = React;
 
 const HomeUsuario = () => {
@@ -59,7 +60,7 @@ const HomeUsuario = () => {
   }, []);
   console.log(info);
   if (info.auth === null) {
-    return (<div>Cargando...</div>);
+    return (<Loader />);
   } else if (info.auth === false) {
     return (<h1>{info.message}</h1>);
   } else if (info.auth === true) {

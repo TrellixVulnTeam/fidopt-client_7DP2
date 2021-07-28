@@ -1,6 +1,7 @@
 import React from "react";
 import AppHeader from "../appComponents/appHeader";
 import DogListComponent from "../perros/dogList";
+import Loader from "../appComponents/Loader"
 const { useState, useEffect } = React;
 
 const HomeVeterinario = () => {
@@ -61,7 +62,7 @@ const HomeVeterinario = () => {
   }, []);
 
   if (info.auth === null) {
-    return <div>Cargando...</div>;
+    return (<Loader />);
   } else if (info.auth === false) {
     return <h1>{info.message}</h1>;
   } else if (info.auth === true) {
