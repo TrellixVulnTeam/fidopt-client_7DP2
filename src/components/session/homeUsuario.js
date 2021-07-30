@@ -1,6 +1,7 @@
 import React from "react";
-import Header from "../appComponents/header"
+import AppHeader from "../appComponents/appHeader"
 import Loader from "../appComponents/Loader"
+import DogListComponent from "../perros/dogList"
 const { useState, useEffect } = React;
 
 const HomeUsuario = () => {
@@ -66,31 +67,12 @@ const HomeUsuario = () => {
   } else if (info.auth === true) {
     return (
       <div>
-        <Header />
-        <p>Welcome {info.nombre}</p>
+        <AppHeader />
+        <p className="text-center text-4xl">Welcome, {info.nombre}</p>
         <h5>Tus perros favoritos son:</h5>
         <div className="item-list clearfix align-middle">
           <div className="row">
-            <div className="col-md-4 col-sm-6">
-              {info.perrosFavoritos.map((perro)=>(
-            <div className="item-card" key={`perro-container-${perro._id}`}>
-              <img
-                src="https://via.placeholder.com/400x100/6495ED"
-                alt="profile-cover"
-                className="img-responsive-cover"
-              ></img>
-              <div className="card-info">
-              <img src="https://bootdey.com/img/Content/avatar/avatar5.png" alt="user" className="profile-photo-lg"></img>
-              <div className="item-info"> 
-              <a href="" className="pull-right text-green"></a>
-                  	<h5 key={`perro-name-${perro._id}`}><a href="#" className="profile-link">{perro.nombre}</a></h5>
-                  	<p key={`perro-raza-${perro._id}`}>{perro.raza}</p>
-              </div>
-              </div>
-            </div>
-              ))}
-
-            </div>
+            <DogListComponent dogs={info.perrosFavoritos} />
           </div>
         </div>
       </div>

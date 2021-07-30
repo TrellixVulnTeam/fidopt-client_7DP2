@@ -1,4 +1,5 @@
 import React from 'react'
+import Loader from "../appComponents/Loader"
 const {useState, useEffect}=React;
 
 const Veterinarios = () => {
@@ -22,13 +23,14 @@ const setInformation = (information) => {
         ciudad: information.ciudad,
         edad: information.edad,
         perros: information.perros,
+        cargando: false
     })
 }
 useEffect(()=>{
     fetchVeterinarios();
 }, [])
 if(loading===true){
-    return( <div>Loading ....</div>)
+    return (<Loader />);
 } else if (loading===false){
     return(
         <div>

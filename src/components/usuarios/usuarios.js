@@ -1,9 +1,9 @@
 // LEFT TO DO
 // 1 - CREATE SINGLE USER COMPONENT
 // 2 - CREATE ENTIRE USER LIST COMPONENT
-
 import React from "react";
 import AppHeader from "../appComponents/appHeader"
+import Loader from "../appComponents/Loader"
 const { useState, useEffect } = React;
 
 const Usuarios = () => {
@@ -35,7 +35,7 @@ const Usuarios = () => {
     fetchUsuarios();
   },);
   if (loading === true) {
-    return (<div>Loading ...</div>);
+    return (<Loader />);
   } else if (loading === false) {
     return (
       <div>

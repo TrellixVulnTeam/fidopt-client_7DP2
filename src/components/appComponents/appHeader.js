@@ -6,10 +6,13 @@ const AppHeader = () => {
   const [isOpen, setIsOpen] = useState(false);
   return (
     <div style={{ background: "linear-gradient(to bottom, #a8c0ff, #4338CA)" }}>
+    
       <header className="flex flex-wrap flex-row justify-between items-center md:space-x-4 px-4 relative">
+      <Link to="/">
         <h1 className="text-center h-32 text-white font-caveat text-5xl pt-8">
           FIDOPT
         </h1>
+        </Link>
         <nav>
           <div className="font-caveat max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex items-center justify-between h-16">
@@ -24,7 +27,7 @@ const AppHeader = () => {
                     </a>
 
                     <a
-                      href="#"
+                      href="/veterinarios"
                       className="text-xl text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
                     >
                       Veterinarios
@@ -36,6 +39,12 @@ const AppHeader = () => {
                     >
                       Contactanos
                     </a>
+                    <a
+                      href="/logout"
+                      className="text-xl text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
+                    >
+                      Logout
+                    </a>
                   </div>
                 </div>
               </div>
@@ -43,7 +52,7 @@ const AppHeader = () => {
                 <button
                   onClick={() => setIsOpen(!isOpen)}
                   type="button"
-                  className="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white"
+                  className="inline-flex items-center justify-center p-2 rounded-md text-white hover:text-white hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white"
                   aria-controls="mobile-menu"
                   aria-expanded="false"
                 >
@@ -99,14 +108,14 @@ const AppHeader = () => {
               <div className="md:hidden" id="mobile-menu">
                 <div ref={ref} className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
                   <a
-                    href="#"
+                    href="/perros"
                     className="hover:bg-gray-700 text-white block px-3 py-2 rounded-md text-base font-medium"
                   >
                     Perros
                   </a>
 
                   <a
-                    href="#"
+                    href="/veterinarios"
                     className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
                   >
                     Veterinarios
@@ -117,6 +126,12 @@ const AppHeader = () => {
                     className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
                   >
                     Contactanos
+                  </a>
+                  <a
+                    href="/logout"
+                    className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
+                  >
+                    Logout
                   </a>
                 </div>
               </div>

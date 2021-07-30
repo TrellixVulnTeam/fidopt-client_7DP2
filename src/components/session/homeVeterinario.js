@@ -47,7 +47,6 @@ const HomeVeterinario = () => {
   };
 
   const setInformation = (information) => {
-    console.log(information);
     setInfo({
       auth: information.auth,
       message: information.message,
