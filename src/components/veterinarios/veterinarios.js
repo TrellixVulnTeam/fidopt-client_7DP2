@@ -1,13 +1,12 @@
 import React from 'react'
 import Loader from "../appComponents/Loader"
+import AppHeader from "../appComponents/appHeader"
+import VeterinariosComponent from "./veterinariosList"
 const {useState, useEffect}=React;
 
 const Veterinarios = () => {
     let [info, setInfo] =useState({
-        nombre: "",
-        ciudad: "",
-        edad: "",
-        perros: [],
+        veterinarios: [],
         cargando: true,
     })
 let loading = info.cargando;
@@ -18,11 +17,9 @@ const fetchVeterinarios = async ()=>{
 }
 
 const setInformation = (information) => {
+    console.log(information)
     setInfo({
-        nombre: information.nombre,
-        ciudad: information.ciudad,
-        edad: information.edad,
-        perros: information.perros,
+       veterinarios: information,
         cargando: false
     })
 }
@@ -34,7 +31,9 @@ if(loading===true){
 } else if (loading===false){
     return(
         <div>
-            <h1>Todos los veterinarios</h1>
+            <AppHeader />
+            {console.log(info)}
+            <VeterinariosComponent vets={info.veterinarios}/>
         </div>
     )
 }

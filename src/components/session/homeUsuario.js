@@ -10,6 +10,8 @@ const HomeUsuario = () => {
     nombre: "",
     perrosFavoritos: [],
     rol: "",
+    meetingRequests: [],
+    adoptionRequests:[],
   });
 
   const getUser = async () => {
@@ -29,12 +31,16 @@ const HomeUsuario = () => {
       let rol = responseFromGet.user.rol;
       let username = responseFromGet.user.nombre;
       let favoriteDogs = responseFromGet.user.perrosFavoritos;
+      let meetingRequests=responseFromGet.user.meetingRequests;
+      let adoptionRequests = responseFromGet.user.adoptionRequests;
       let userInfo = {
         auth: responseFromGet.auth,
         message: responseFromGet.message,
         nombre: username,
         perrosFavoritos: favoriteDogs,
         rol: rol,
+        meetingRequests: meetingRequests,
+        adoptionRequests: adoptionRequests,
       };
       setInformation(userInfo);
     } else {
@@ -53,6 +59,8 @@ const HomeUsuario = () => {
       nombre: information.nombre,
       perrosFavoritos: information.perrosFavoritos,
       rol: information.rol,
+      meetingRequests: information.meetingRequests,
+      adoptionRequests:information.adoptionRequests,
     });
   };
 
@@ -73,6 +81,10 @@ const HomeUsuario = () => {
         <div className="item-list clearfix align-middle">
           <div className="row">
             <DogListComponent dogs={info.perrosFavoritos} />
+            <h5>Tus requests de adopcion son :</h5>
+              <p>{info.adoptionRequests}</p>
+              <h5>us requests para conocer perros son:</h5>
+              <p>{info.meetingRequests}</p>
           </div>
         </div>
       </div>

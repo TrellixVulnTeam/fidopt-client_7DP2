@@ -10,6 +10,7 @@ import Usuarios from "./components/usuarios/usuarios"
 import Perro from "./components/perros/perro"
 import AdoptionRequest from "./components/forms/adoptionRequest"
 import MeetingRequest from "./components/forms/meetingRequest"
+import NuevoPerro from "./components/forms/nuevoPerro"
 const App = () => {
   return (
     
@@ -105,6 +106,13 @@ const App = () => {
           path="/newMeetingRequest/:id"
           render={() => {
             return <MeetingRequest></MeetingRequest>;
+          }}
+        />
+        <Route
+          exact
+          path="/nuevoPerro"
+          render={() => {
+            return <NuevoPerro></NuevoPerro>;
           }}
         />
       </Switch>
