@@ -67,7 +67,7 @@ const HomeUsuario = () => {
   useEffect(() => {
     getUser();
   }, []);
-  console.log(info);
+  console.log(info.adoptionRequests);
   if (info.auth === null) {
     return (<Loader />);
   } else if (info.auth === false) {
@@ -82,8 +82,8 @@ const HomeUsuario = () => {
           <div className="row">
             <DogListComponent dogs={info.perrosFavoritos} />
             <h5>Tus requests de adopcion son :</h5>
-              <p>{info.adoptionRequests}</p>
-              <h5>us requests para conocer perros son:</h5>
+              <p>{info.adoptionRequests}, </p>
+              <h5>Tus requests para conocer perros son:</h5>
               <p>{info.meetingRequests}</p>
           </div>
         </div>

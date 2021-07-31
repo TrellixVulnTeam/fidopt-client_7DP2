@@ -24,17 +24,14 @@ const SignUp = () => {
         email: info.email,
         pass: info.pass,
         rol: info.rol,
-        ciudad: info.ciudad
+        ciudad: info.ciudad,
       }),
     })
       .then((response) => response.json())
       .then((result) => {
-        return result;
+        window.localStorage.setItem("token", result.token);
+        return result
       });
-    return responseFromPost;
-  };
-  const saveToken = (obj) => {
-    window.localStorage.setItem("token", obj.token);
   };
 
   const handleChange = (event) => {
@@ -59,8 +56,7 @@ const SignUp = () => {
   };
   const handleFormSubmit = async (event) => {
     event.preventDefault();
-    let token = await postSignUp();
-    saveToken(token);
+    await postSignUp();
     redirect();
   };
 
@@ -97,7 +93,7 @@ const SignUp = () => {
                 onChange={handleChange}
               ></input>
             </div>
-          
+
             <div className="flex flex-col mb-4">
               <label
                 className="mb-2 font-bold text-lg text-indigo-700"
@@ -138,7 +134,6 @@ const SignUp = () => {
                   className="border py-2 px-3 mr-3 border-indigo-300"
                   type="checkbox"
                   name="rol"
-                  
                   onChange={handleCheck}
                 ></input>
                 <span className="text-indigo-500">Si, soy veterinario!</span>
