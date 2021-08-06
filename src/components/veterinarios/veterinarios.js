@@ -32,7 +32,6 @@ if(loading===true){
     return(
         <div>
             <AppHeader />
-            {console.log(info)}
             <VeterinariosComponent vets={info.veterinarios}/>
         </div>
     )

@@ -11,6 +11,7 @@ import Perro from "./components/perros/perro"
 import AdoptionRequest from "./components/forms/adoptionRequest"
 import MeetingRequest from "./components/forms/meetingRequest"
 import NuevoPerro from "./components/forms/nuevoPerro"
+import Profile from "./components/veterinarios/ProfilePage"
 const App = () => {
   return (
     
@@ -113,6 +114,13 @@ const App = () => {
           path="/nuevoPerro"
           render={() => {
             return <NuevoPerro></NuevoPerro>;
+          }}
+        />
+        <Route
+          exact
+          path="/veterinario/:id"
+          render={() => {
+            return <Profile></Profile>;
           }}
         />
       </Switch>

@@ -36,7 +36,6 @@ const AdoptionRequest = (props) => {
       .then((result) => {
         return result;
       });
-    return response;
   };
   const redirect = () => {
     history.push(`/homeUsuario`);
