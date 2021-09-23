@@ -7,10 +7,12 @@ const AllRequests = (props) => {
     adoptionReason: vetRequests.adoptionReason,
     ciudad: vetRequests.ciudad,
     motiveForVisit: vetRequests.motiveForVisit,
-    status: vetRequests.status,
     });
-  let accepted = "Aceptada";
-  let rejected = "Rechazada";
+    let [status, setStatus] = useState({
+      status: vetRequests.status,
+    })
+  // let accepted = "Aceptada";
+  // let rejected = "Rechazada";
 
 
   return (
@@ -34,14 +36,15 @@ const AllRequests = (props) => {
             <p className="text-sm leading-5 py-4 text-gray-600">
              Ciudad: {info.ciudad}
             </p>
-            <div className="flex ">
-              <button className="py-2 px-4 text-xs leading-3 text-white rounded-full bg-green-500">
+            {status.status = null || "rejected" ? <div className="flex">
+              <button className="py-2 px-4 text-xs leading-3 text-white rounded-full bg-green-500" value="accepted" onClick={e=> setStatus({status: e.target.value})}>
                 Aceptar
               </button>
-              <button className="py-2 px-4 text-xs leading-3 text-white rounded-full bg-red-500">
+              <button className="py-2 px-4 mx-2 text-xs leading-3 text-white rounded-full bg-red-500" value="rejected" onClick={e=>setStatus({status: e.target.value})}> 
                 Rechazar
               </button>
-            </div>
+            </div> : <div></div>}
+           
           </div>
         </div>
         

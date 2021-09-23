@@ -38,6 +38,7 @@ const SingleDogComponent = (props) => {
         </p>
       </div>
     </div>
+
   );
 };
 export default SingleDogComponent;
