@@ -14,8 +14,10 @@ const AllRequests = (props) => {
   // let accepted = "Aceptada";
   // let rejected = "Rechazada";
 
-
+  useEffect(() => {
+  }, [setStatus]);
   return (
+  
     <div className="py-8 w-full">
       <div className="flex flex-row w-full">
         <div className="lg:w-4/12 lg:mr-7 lg:mb-0 mb-7 bg-white p-6 shadow rounded">
@@ -36,14 +38,16 @@ const AllRequests = (props) => {
             <p className="text-sm leading-5 py-4 text-gray-600">
              Ciudad: {info.ciudad}
             </p>
-            {status.status = null || "rejected" ? <div className="flex">
-              <button className="py-2 px-4 text-xs leading-3 text-white rounded-full bg-green-500" value="accepted" onClick={e=> setStatus({status: e.target.value})}>
+            {!!!status.status  ? <div className="flex">
+            <button className="py-2 px-4 text-xs leading-3 text-white rounded-full bg-green-500" value="accepted" onClick={e=> setStatus({status: e.target.value})}>
                 Aceptar
               </button>
               <button className="py-2 px-4 mx-2 text-xs leading-3 text-white rounded-full bg-red-500" value="rejected" onClick={e=>setStatus({status: e.target.value})}> 
                 Rechazar
               </button>
-            </div> : <div></div>}
+            </div> : <div className="flex">
+              
+            </div>}
            
           </div>
         </div>
